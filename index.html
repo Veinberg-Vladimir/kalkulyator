@@ -224,7 +224,7 @@ select{appearance:none;-webkit-appearance:none;padding-right:42px;background-ima
     var g=REF[state.gender], box=$('ref-rows'); $('ref-title').textContent=g.title; box.innerHTML='';
     g.rows.forEach(function(r,i){
       var b=document.createElement('button'); b.type='button'; b.className='band'; b.dataset.pct=r[0]; b.setAttribute('aria-pressed','false');
-      var img=document.createElement('img'); img.src='img/'+(state.gender==='m'?'men':'women')+'-'+(i+1)+'.png'; img.alt=''; img.loading='lazy';
+      var img=document.createElement('img'); img.src='img/'+(state.gender==='m'?'men':'women')+'-'+(i+1)+'.jpg'; img.alt=''; img.loading='lazy';
       img.onerror=function(){this.style.visibility='hidden'};
       var p=document.createElement('span'); p.className='pct'; p.textContent=r[1];
       var d=document.createElement('span'); d.className='d'; d.textContent=r[2];
