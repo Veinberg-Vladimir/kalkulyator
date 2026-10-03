@@ -12,14 +12,13 @@
   --ink:#2A2C30;--ink2:#4A4D55;--muted:#6F737C;--line:#DADBD1;
   --khaki:#6B6A48;--khaki-d:#4F4E35;--khaki-l:#B9B894;--khaki-xl:#E9E8DC;
   --paper:#F2F2EE;--white:#FFFFFF;
-  --good:#3E8E5E;--warn:#B98A2E;--bad:#B5484A;
+  --good:#3E8E5E;--bad:#B5484A;
   color-scheme:light;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Montserrat',Helvetica,Arial,sans-serif;background:var(--paper);color:var(--ink);min-height:100%;-webkit-font-smoothing:antialiased}
-.hero{background:linear-gradient(135deg,#2A2C30 0%,#3A3B30 45%,#6B6A48 100%);color:#fff;padding-block:34px 42px;padding-inline:16px}
+.hero{background:linear-gradient(135deg,#2A2C30 0%,#3A3B30 45%,#6B6A48 100%);color:#fff;padding-block:40px 46px;padding-inline:16px}
 .hero .in{max-width:640px;margin:0 auto}
-.hero .brand{font-size:.7rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--khaki-l);margin-bottom:14px}
 .hero h1{font-size:2.1rem;line-height:1.02;font-weight:900;text-transform:uppercase;letter-spacing:-.01em;text-wrap:balance}
 .hero h1 span{color:#D9D7B8}
 .hero p{margin-top:12px;color:rgba(255,255,255,.78);font-size:.95rem;line-height:1.5;max-width:34ch}
@@ -32,7 +31,7 @@ body{font-family:'Montserrat',Helvetica,Arial,sans-serif;background:var(--paper)
 .field{margin-bottom:18px}
 label,.lbl{display:block;font-size:.78rem;font-weight:700;color:var(--ink);margin-bottom:8px}
 .hint{font-size:.75rem;color:var(--muted);margin-top:6px;line-height:1.45}
-input[type="number"],select{width:100%;padding:14px 14px;background:var(--white);border:2px solid var(--line);border-radius:12px;color:var(--ink);font:inherit;font-size:1rem;outline:none;transition:border-color .2s,box-shadow .2s}
+input[type="number"],input[type="text"],input[type="email"],select{width:100%;padding:14px 14px;background:var(--white);border:2px solid var(--line);border-radius:12px;color:var(--ink);font:inherit;font-size:1rem;outline:none;transition:border-color .2s,box-shadow .2s}
 input:focus,select:focus{border-color:var(--khaki);box-shadow:0 0 0 3px rgba(107,106,72,.18)}
 select{appearance:none;-webkit-appearance:none;padding-right:42px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B6A48' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -43,12 +42,13 @@ select{appearance:none;-webkit-appearance:none;padding-right:42px;background-ima
 .ref-toggle{background:none;border:0;padding:0;margin-top:8px;color:var(--khaki);font:inherit;font-size:.8rem;font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .ref{margin-top:12px;border:2px solid var(--khaki-xl);border-radius:14px;overflow:hidden}
 .ref .t{background:var(--khaki-xl);padding:10px 14px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--khaki-d)}
-.band{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:center;width:100%;text-align:left;padding:12px 14px;border:0;border-top:1px solid var(--khaki-xl);background:var(--white);font:inherit;cursor:pointer;transition:background .15s}
+.band{display:grid;grid-template-columns:64px 66px 1fr;gap:10px;align-items:center;width:100%;text-align:left;padding:8px 12px 8px 8px;border:0;border-top:1px solid var(--khaki-xl);background:var(--white);font:inherit;cursor:pointer;transition:background .15s}
 .band:first-of-type{border-top:0}
 .band:hover{background:#FAFAF6}
 .band[aria-pressed="true"]{background:var(--khaki-xl)}
+.band img{width:64px;height:96px;object-fit:cover;object-position:top;border-radius:8px;background:var(--paper);display:block}
 .band .pct{font-weight:800;color:var(--khaki-d);font-variant-numeric:tabular-nums;font-size:.95rem}
-.band .d{font-size:.82rem;color:var(--ink2);line-height:1.4}
+.band .d{font-size:.8rem;color:var(--ink2);line-height:1.4}
 .ref .n{padding:10px 14px;font-size:.72rem;color:var(--muted);border-top:1px solid var(--khaki-xl)}
 .btn{width:100%;padding:17px;border:0;border-radius:14px;background:var(--khaki);color:#fff;font:inherit;font-size:.95rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 20px rgba(107,106,72,.30);transition:transform .15s,filter .15s}
 .btn:hover{filter:brightness(1.05)}.btn:active{transform:scale(.99)}
@@ -69,7 +69,11 @@ select{appearance:none;-webkit-appearance:none;padding-right:42px;background-ima
 .zone .n{font-size:.78rem;font-weight:700;margin-top:6px}
 .zone .d{font-size:.68rem;color:var(--muted);margin-top:2px;line-height:1.3}
 .zone.cut .v{color:var(--bad)}.zone.keep{background:var(--khaki-xl);border-color:var(--khaki-l)}.zone.keep .v{color:var(--khaki-d)}.zone.gain .v{color:var(--good)}
-.fine{font-size:.75rem;color:var(--muted);line-height:1.5;margin-top:16px;text-align:center}
+.locked .num{filter:blur(9px);user-select:none;pointer-events:none}
+.gate{margin-top:18px;padding:18px;border:2px solid var(--khaki-l);border-radius:16px;background:var(--khaki-xl)}
+.gate h3{font-size:1rem;font-weight:800;margin-bottom:4px}
+.gate p{font-size:.82rem;color:var(--ink2);margin-bottom:12px;line-height:1.45}
+.gate .row{margin-bottom:12px}
 .how{max-width:640px;margin:0 auto;padding-inline:16px;padding-block:8px 44px}
 .how h2{text-align:center;font-size:1.35rem;font-weight:900;text-transform:uppercase;letter-spacing:.02em}
 .how .s{text-align:center;color:var(--muted);font-size:.9rem;margin:6px 0 18px}
@@ -77,49 +81,48 @@ select{appearance:none;-webkit-appearance:none;padding-right:42px;background-ima
 .hcard .ic{width:40px;height:40px;border-radius:10px;background:var(--khaki-xl);display:grid;place-items:center;color:var(--khaki-d);margin-bottom:12px}
 .hcard h3{font-size:1rem;font-weight:800;margin-bottom:6px}
 .hcard p{font-size:.88rem;line-height:1.55;color:var(--ink2)}
-.foot{background:var(--ink);color:rgba(255,255,255,.75);text-align:center;padding-block:26px;padding-inline:16px;font-size:.8rem;letter-spacing:.04em}
-.foot b{color:#fff;font-weight:700}
 @media (max-width:360px){.zones{grid-template-columns:1fr}.hero h1{font-size:1.8rem}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
 <header class="hero">
   <div class="in">
-    <div class="brand">Владимир | тренер для мужчин</div>
     <h1><span>Бесплатный</span><br>калькулятор калорий</h1>
-    <p>Узнай свою норму калорий и белка за 30 секунд. Без почты и регистрации</p>
+    <p>Узнай свою норму калорий и белка за 30 секунд</p>
   </div>
 </header>
 
 <main class="wrap">
   <!-- ФОРМА -->
   <section class="card" id="form-card">
-    <div class="card-h"><h2>Посчитай свою норму</h2><p>Заполни четыре поля и нажми «Рассчитать»</p></div>
+    <div class="card-h"><h2>Рассчитай свой TDEE</h2><p>Заполни данные ниже и получи результат</p></div>
     <form class="card-b" id="f" novalidate>
+      <div class="field">
+        <span class="lbl">Пол</span>
+        <div class="seg" id="gender">
+          <button type="button" data-v="m" aria-pressed="true">Мужчина</button>
+          <button type="button" data-v="f" aria-pressed="false">Женщина</button>
+        </div>
+      </div>
       <div class="row">
-        <div class="field"><label for="weight">Вес, кг</label><input id="weight" type="number" inputmode="decimal" min="35" max="300" step="0.1" placeholder="например 95" value="95"></div>
-        <div class="field"><label for="bf">Жир, % от веса</label><input id="bf" type="number" inputmode="decimal" min="3" max="60" step="0.5" placeholder="например 25" value="28"></div>
+        <div class="field"><label for="weight">Вес, кг</label><input id="weight" type="number" inputmode="decimal" min="35" max="300" step="0.1" placeholder="95"></div>
+        <div class="field"><label for="bf">Жир, % от веса</label><input id="bf" type="number" inputmode="decimal" min="3" max="60" step="0.5" placeholder="25"></div>
       </div>
       <div class="field" style="margin-top:-8px">
-        <button class="ref-toggle" type="button" id="ref-btn" aria-expanded="false" aria-controls="ref">Не знаешь свой процент? Выбери по описанию</button>
+        <button class="ref-toggle" type="button" id="ref-btn" aria-expanded="false" aria-controls="ref">Не знаешь свой процент? Посмотри ориентир</button>
         <div class="ref" id="ref" hidden>
-          <div class="t">Ориентир для мужчин, нажми на свой</div>
-          <button class="band" type="button" data-pct="10" aria-pressed="false"><span class="pct">8-12%</span><span class="d">Кубики и вены видны всегда, лицо сухое</span></button>
-          <button class="band" type="button" data-pct="14" aria-pressed="false"><span class="pct">12-16%</span><span class="d">Пресс виден, талия узкая, руки рельефные</span></button>
-          <button class="band" type="button" data-pct="20" aria-pressed="false"><span class="pct">17-22%</span><span class="d">Живот плоский, но мягкий, пресса почти не видно</span></button>
-          <button class="band" type="button" data-pct="25" aria-pressed="false"><span class="pct">23-27%</span><span class="d">Живот выступает, появились бока, пресса нет</span></button>
-          <button class="band" type="button" data-pct="30" aria-pressed="false"><span class="pct">28-33%</span><span class="d">Круглый живот, бока, лицо округлилось</span></button>
-          <button class="band" type="button" data-pct="37" aria-pressed="false"><span class="pct">34-40%</span><span class="d">Большой живот нависает над ремнём</span></button>
-          <div class="n">Это приблизительный ориентир на глаз. Точный процент даёт только замер</div>
+          <div class="t" id="ref-title">Ориентир для мужчин, нажми на свой</div>
+          <div id="ref-rows"></div>
+          <div class="n">Это приблизительный визуальный ориентир. Телосложение у всех разное</div>
         </div>
       </div>
       <div class="field">
         <label for="activity">Активность</label>
         <select id="activity">
-          <option value="1.2">Сидячая, офис, без тренировок</option>
-          <option value="1.375">Лёгкая, 1-2 тренировки в неделю</option>
-          <option value="1.55" selected>Средняя, 3-5 тренировок в неделю</option>
-          <option value="1.725">Высокая, 6-7 тренировок в неделю</option>
+          <option value="1.2">Сидячая, офисная работа</option>
+          <option value="1.375">Лёгкие тренировки, 1-2 дня в неделю</option>
+          <option value="1.55" selected>Средние тренировки, 3-5 дней в неделю</option>
+          <option value="1.725">Тяжёлые тренировки, 6-7 дней в неделю</option>
           <option value="1.9">Спортсмен, 2 тренировки в день</option>
         </select>
       </div>
@@ -129,7 +132,7 @@ select{appearance:none;-webkit-appearance:none;padding-right:42px;background-ima
           <button type="button" data-v="1" aria-pressed="false">Да</button>
           <button type="button" data-v="0" aria-pressed="true">Нет</button>
         </div>
-        <div class="hint" id="diet-hint" hidden>Учту адаптацию обмена: минус 100 ккал от поддержки</div>
+        <div class="hint" id="diet-hint" hidden>Будет учтена адаптация обмена: минус 100 ккал</div>
       </div>
       <button class="btn" type="submit">Рассчитать →</button>
       <div class="err" id="err" hidden>Заполни вес и процент жира</div>
@@ -138,20 +141,29 @@ select{appearance:none;-webkit-appearance:none;padding-right:42px;background-ima
 
   <!-- РЕЗУЛЬТАТ -->
   <section class="card" id="res-card" hidden>
-    <div class="card-h"><h2>Твой результат</h2><p>По формуле Кэтча-Макардла, по сухой массе тела</p></div>
-    <div class="card-b">
-      <div class="big"><div class="k">Поддержка, твой TDEE</div><div class="v" id="r-tdee">—</div><div class="u">ккал в день, чтобы вес стоял</div></div>
+    <div class="card-h"><h2>Твой результат</h2><p>По формуле Кэтча-Макардла</p></div>
+    <div class="card-b" id="res-body">
+      <div class="big"><div class="k">Поддерживающие калории</div><div class="v num" id="r-tdee">—</div><div class="u">ккал в день</div></div>
       <div class="prot">
         <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></div>
-        <div><div class="k">Белок в день</div><div class="v" id="r-prot">—</div></div>
+        <div><div class="k">Норма белка в день</div><div class="v num" id="r-prot">—</div></div>
       </div>
       <div class="zl">Зоны калорий</div>
       <div class="zones">
-        <div class="zone cut"><div class="v" id="z-cut">—</div><div class="n">Сушка</div><div class="d">дефицит 20%</div></div>
-        <div class="zone keep"><div class="v" id="z-keep">—</div><div class="n">Поддержание</div><div class="d">твой TDEE</div></div>
-        <div class="zone gain"><div class="v" id="z-gain">—</div><div class="n">Набор</div><div class="d">профицит 10%</div></div>
+        <div class="zone cut"><div class="v num" id="z-cut">—</div><div class="n">Сушка</div><div class="d">умеренный дефицит</div></div>
+        <div class="zone keep"><div class="v num" id="z-keep">—</div><div class="n">Поддержание</div><div class="d">твой TDEE</div></div>
+        <div class="zone gain"><div class="v num" id="z-gain">—</div><div class="n">Набор</div><div class="d">лёгкий профицит</div></div>
       </div>
-      <p class="fine" id="r-note"></p>
+      <form class="gate" id="gate" hidden novalidate>
+        <h3>Куда прислать расчёт?</h3>
+        <p>Оставь имя и почту, результат откроется сразу</p>
+        <div class="row">
+          <input id="g-name" type="text" autocomplete="given-name" placeholder="Имя">
+          <input id="g-email" type="email" autocomplete="email" inputmode="email" placeholder="Почта">
+        </div>
+        <button class="btn" type="submit">Показать результат →</button>
+        <div class="err" id="g-err" hidden>Нужны имя и настоящая почта</div>
+      </form>
       <button class="btn ghost" type="button" id="again">← Пересчитать</button>
     </div>
   </section>
@@ -159,69 +171,116 @@ select{appearance:none;-webkit-appearance:none;padding-right:42px;background-ima
 
 <section class="how">
   <h2>Как это работает</h2>
-  <p class="s">Откуда берутся твои цифры</p>
+  <p class="s">Наука за твоими цифрами</p>
   <div class="hcard">
     <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
     <h3>Что такое TDEE</h3>
-    <p>Общий расход энергии за день: базовый обмен плюс всё движение и тренировки. Столько калорий нужно, чтобы вес стоял на месте</p>
+    <p>Общий суточный расход энергии: сколько калорий тело сжигает за день с учётом базового обмена и уровня активности</p>
   </div>
   <div class="hcard">
     <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
     <h3>Формула Кэтча-Макардла</h3>
-    <p>Считает по сухой массе тела, без жира. Жир калории почти не тратит, поэтому у человека с большим животом эта формула точнее, чем расчёт по росту и возрасту</p>
+    <p>Калькулятор считает по сухой массе тела, поэтому он точнее стандартных формул по росту и весу</p>
   </div>
   <div class="hcard">
     <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
-    <h3>Зачем столько белка</h3>
-    <p>2 г на кг веса сохраняют мышцы, пока уходит жир, и дают им расти в наборе. Без белка худеешь в «худого с животом», а не в форму</p>
+    <h3>Почему важен белок</h3>
+    <p>Около 2 г белка на кг веса сохраняют мышцы на сушке и помогают им расти в наборе. Это основа любой работы над телом</p>
   </div>
 </section>
 
-<footer class="foot">Калькулятор <b>Владимира</b>, тренера для мужчин</footer>
-
 <script>
 (function(){
+  // ===== куда уходят заявки (Google Форма). Пусто = результат открывается без почты =====
+  var LEAD={endpoint:'', name:'', email:'', data:''};
+
   var $=function(id){return document.getElementById(id)};
   var fmt=function(n){return Math.round(n).toLocaleString('ru-RU')};
-  var diet=false;
+  var state={gender:'m',diet:false,last:null};
 
-  // переключатель диеты
-  Array.prototype.forEach.call($('diet').querySelectorAll('button'),function(b){
-    b.addEventListener('click',function(){
-      diet=b.dataset.v==='1';
-      Array.prototype.forEach.call($('diet').querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
-      $('diet-hint').hidden=!diet;
+  var REF={
+    m:{title:'Ориентир для мужчин, нажми на свой',rows:[
+      [10,'8-12%','Кубики и вены видны всегда, лицо сухое'],
+      [14,'12-16%','Пресс виден, талия узкая, руки рельефные'],
+      [20,'17-22%','Живот плоский, но мягкий, пресса почти не видно'],
+      [25,'23-27%','Живот выступает, появились бока, пресса нет'],
+      [30,'28-33%','Круглый живот, бока, лицо округлилось'],
+      [37,'34-40%','Большой живот нависает над ремнём']]},
+    f:{title:'Ориентир для женщин, нажми на свой',rows:[
+      [16,'14-18%','Мышцы прорисованы, пресс виден, бёдра узкие'],
+      [21,'19-23%','Подтянутая, живот плоский, пресса почти не видно'],
+      [26,'24-28%','Живот мягкий, не выступает, бёдра округлые'],
+      [31,'29-33%','Живот выступает, появились бока и складки'],
+      [36,'34-39%','Круглый живот, полные руки и бёдра'],
+      [42,'40-45%','Большой живот, складки на боках и спине']]}
+  };
+  function renderRef(){
+    var g=REF[state.gender], box=$('ref-rows'); $('ref-title').textContent=g.title; box.innerHTML='';
+    g.rows.forEach(function(r,i){
+      var b=document.createElement('button'); b.type='button'; b.className='band'; b.dataset.pct=r[0]; b.setAttribute('aria-pressed','false');
+      var img=document.createElement('img'); img.src='img/'+(state.gender==='m'?'men':'women')+'-'+(i+1)+'.png'; img.alt=''; img.loading='lazy';
+      img.onerror=function(){this.style.visibility='hidden'};
+      var p=document.createElement('span'); p.className='pct'; p.textContent=r[1];
+      var d=document.createElement('span'); d.className='d'; d.textContent=r[2];
+      b.appendChild(img); b.appendChild(p); b.appendChild(d);
+      b.addEventListener('click',function(){
+        $('bf').value=r[0];
+        Array.prototype.forEach.call(box.querySelectorAll('.band'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+      });
+      box.appendChild(b);
     });
-  });
+  }
+  renderRef();
 
-  // референс процента жира
+  function seg(id,fn){
+    var box=$(id);
+    Array.prototype.forEach.call(box.querySelectorAll('button'),function(b){
+      b.addEventListener('click',function(){
+        Array.prototype.forEach.call(box.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+        fn(b.dataset.v);
+      });
+    });
+  }
+  seg('gender',function(v){state.gender=v;renderRef();});
+  seg('diet',function(v){state.diet=v==='1';$('diet-hint').hidden=!state.diet;});
+
   $('ref-btn').addEventListener('click',function(){
     var open=$('ref').hidden; $('ref').hidden=!open; $('ref-btn').setAttribute('aria-expanded',open?'true':'false');
   });
-  Array.prototype.forEach.call(document.querySelectorAll('.band'),function(b){
-    b.addEventListener('click',function(){
-      $('bf').value=b.dataset.pct;
-      Array.prototype.forEach.call(document.querySelectorAll('.band'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
-    });
-  });
 
-  // расчёт
+  var unlocked=false;
+  try{ unlocked=localStorage.getItem('calc-unlocked')==='1'; }catch(e){}
+  function gateOn(){ return !!LEAD.endpoint && !unlocked; }
+
   $('f').addEventListener('submit',function(e){
     e.preventDefault();
     var w=+$('weight').value, bf=+$('bf').value, act=+$('activity').value;
     if(!w||!bf||w<35||bf<3||bf>60){ $('err').hidden=false; return; }
     $('err').hidden=true;
-    var lbm=w*(100-bf)/100;
-    var bmr=370+21.6*lbm;
-    var tdee=bmr*act-(diet?100:0);
-    var protein=2*w;
-    $('r-tdee').textContent=fmt(tdee);
-    $('r-prot').textContent=fmt(protein)+' г';
+    var lbm=w*(100-bf)/100, bmr=370+21.6*lbm, tdee=bmr*act-(state.diet?100:0), protein=2*w;
+    state.last={gender:state.gender,w:w,bf:bf,act:act,diet:state.diet,tdee:Math.round(tdee),protein:Math.round(protein)};
+    $('r-tdee').textContent=fmt(tdee); $('r-prot').textContent=fmt(protein)+' г';
     $('z-cut').textContent=fmt(tdee*0.8); $('z-keep').textContent=fmt(tdee); $('z-gain').textContent=fmt(tdee*1.1);
-    $('r-note').textContent='Сухая масса '+fmt(lbm)+' кг, базовый обмен '+fmt(bmr)+' ккал'+(diet?', минус 100 ккал за адаптацию':'')+'. Это стартовая цифра: через 2 недели сверь со средним весом за неделю';
+    var g=gateOn(); $('gate').hidden=!g; $('res-body').classList.toggle('locked',g);
     $('form-card').hidden=true; $('res-card').hidden=false;
     window.scrollTo({top:$('res-card').offsetTop-12,behavior:'smooth'});
   });
+
+  $('gate').addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=$('g-name').value.trim(), email=$('g-email').value.trim();
+    if(!name||!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ $('g-err').hidden=false; return; }
+    $('g-err').hidden=true;
+    var L=state.last||{};
+    var data=(L.gender==='f'?'ж':'м')+' · '+L.w+' кг · '+L.bf+'% · акт '+L.act+(L.diet?' · диета':'')+' · TDEE '+L.tdee+' · белок '+L.protein;
+    try{
+      var fd=new FormData(); fd.append(LEAD.name,name); fd.append(LEAD.email,email); if(LEAD.data) fd.append(LEAD.data,data);
+      fetch(LEAD.endpoint,{method:'POST',mode:'no-cors',body:fd}).catch(function(){});
+    }catch(err){}
+    unlocked=true; try{ localStorage.setItem('calc-unlocked','1'); }catch(err){}
+    $('gate').hidden=true; $('res-body').classList.remove('locked');
+  });
+
   $('again').addEventListener('click',function(){
     $('res-card').hidden=true; $('form-card').hidden=false;
     window.scrollTo({top:$('form-card').offsetTop-12,behavior:'smooth'});
