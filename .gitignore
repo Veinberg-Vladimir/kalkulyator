@@ -1,3 +1,5 @@
 _архив/
 .DS_Store
 img/_gen/
+.last-check
+_тест-*.png
